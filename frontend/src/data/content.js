@@ -98,7 +98,7 @@ export const projects = [
     links: [
       { label: 'View on GitHub', href: 'https://github.com/subrahmanyahegde24/SimplyReview' },
       // TODO: replace '#' with the real live demo URL
-      { label: 'Live Demo', href: '#' },
+      { label: 'Live Demo', href: 'https://simply-review.vercel.app/' },
     ],
   },
   {
