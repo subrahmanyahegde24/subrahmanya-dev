@@ -1,6 +1,6 @@
 # Subrahmanya Shivaram Hegde — Portfolio
 
-Personal portfolio website showcasing my work in Agentic AI, RAG, and Edge LLMs.
+Cinematic personal portfolio showcasing my work in Agentic AI, RAG, and Edge LLMs.
 
 ## Live Site
 
@@ -8,20 +8,25 @@ Personal portfolio website showcasing my work in Agentic AI, RAG, and Edge LLMs.
 
 ## Tech Stack
 
-- **Frontend**: React, Tailwind CSS, Framer Motion, Three.js
-- **Backend**: Python (Vercel Serverless Functions)
-- **AI**: Gemini API (RAG-powered chatbot)
+- **Frontend**: React, Vite, Tailwind CSS, GSAP ScrollTrigger, Lenis smooth scroll
+- **Backend**: Python FastAPI (Vercel Serverless Functions)
 - **Deployment**: Vercel
 
 ## Features
 
-- Dark/Light theme with glassmorphism UI
-- 3D particle field and skill orbit visualizations
-- AI-powered chatbot (RAG over resume data)
-- Prompt Hacker mini-game
-- Semantic project search
-- Fully responsive (mobile, tablet, desktop)
-- Contact form with serverless API
+- Cinematic single-page layout with a hero video and scroll-driven animations
+- Stacked project cards, bento skill grid, and an animated experience timeline
+- Swappable accent palette (`?accent=violet` etc. to preview; default silver)
+- Downloadable 1-page resume (`frontend/public/resume.pdf`)
+- Respects `prefers-reduced-motion`; fully responsive
+
+## Local Development
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
 ## Contact
 
