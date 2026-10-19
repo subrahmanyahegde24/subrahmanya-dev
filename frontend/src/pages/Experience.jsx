@@ -4,7 +4,7 @@ import PageTransition from '../components/layout/PageTransition';
 import SectionHeading from '../components/ui/SectionHeading';
 import GlassCard from '../components/ui/GlassCard';
 import Badge from '../components/ui/Badge';
-import { experience, education, certifications, activities, achievements } from '../data/resume';
+import { experience, education, certifications, achievements } from '../data/resume';
 
 function TimelineItem({ item, index, isLeft }) {
   return (
@@ -112,8 +112,8 @@ export default function Experience() {
 
         {/* Certifications */}
         <div className="mt-20">
-          <SectionHeading title="Certifications & Activities" />
-          <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
+          <SectionHeading title="Certifications & Achievements" />
+          <div className="max-w-3xl mx-auto">
             <GlassCard>
               <h3 className="font-display text-lg font-bold text-white light:text-slate-900 mb-4">
                 Certifications
@@ -138,16 +138,6 @@ export default function Experience() {
                 ))}
               </div>
             </GlassCard>
-
-            <div className="space-y-6">
-              {activities.map((act, i) => (
-                <GlassCard key={i}>
-                  <h4 className="font-display font-bold text-white light:text-slate-900">{act.org}</h4>
-                  <p className="text-accent-indigo text-sm">{act.role} • {act.period}</p>
-                  <p className="text-sm text-slate-400 light:text-slate-700 mt-2">{act.description}</p>
-                </GlassCard>
-              ))}
-            </div>
           </div>
         </div>
 

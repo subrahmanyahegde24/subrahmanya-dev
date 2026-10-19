@@ -13,9 +13,9 @@ import { projects } from '../data/projects';
 
 const bootLines = [
   '> Connecting to Neural Nexus...',
-  '> Loading: Edge AI Systems.............. [OK]',
-  '> Loading: Computer Vision.............. [OK]',
+  '> Loading: Multi-Agent Systems.......... [OK]',
   '> Loading: Agentic RAG Pipeline......... [OK]',
+  '> Loading: Edge LLMs.................... [OK]',
   "> Welcome. Let's build something remarkable.",
 ];
 
@@ -147,7 +147,7 @@ export default function Home() {
             >
               Talk to My AI Agent →
             </button>
-            <a href="/resume.pdf" download className="btn-outline inline-flex items-center gap-2">
+            <a href="/resume.pdf" download="Subrahmanya_Hegde_Resume.pdf" className="btn-outline inline-flex items-center gap-2">
               <HiArrowDownTray className="w-4 h-4" />
               Download Resume
             </a>
@@ -159,7 +159,7 @@ export default function Home() {
       <section className="py-16 border-y border-white/10 light:border-gray-200/30">
         <div className="max-w-5xl mx-auto px-4 grid grid-cols-3 gap-4 sm:gap-8 text-center">
           <div>
-            <AnimatedCounter end={5} suffix="+" />
+            <AnimatedCounter end={projects.length} suffix="+" />
             <p className="text-slate-400 light:text-slate-700 mt-2 text-sm font-mono">Projects</p>
           </div>
           <div>
@@ -167,7 +167,7 @@ export default function Home() {
             <p className="text-slate-400 light:text-slate-700 mt-2 text-sm font-mono">Years Experience</p>
           </div>
           <div>
-            <AnimatedCounter end={10} suffix="+" />
+            <AnimatedCounter end={30} suffix="+" />
             <p className="text-slate-400 light:text-slate-700 mt-2 text-sm font-mono">Technologies</p>
           </div>
         </div>
