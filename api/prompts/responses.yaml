@@ -47,40 +47,41 @@ fallback:
   skills:
     keywords: ["skill", "tech", "stack", "know", "language", "tool"]
     response: >
-      Subrahmanya is skilled in **Python, Machine Learning, Deep Learning, RAG pipelines, Edge AI,
-      Computer Vision, NLP, LLMs (Gemma, Gemini), GCP, Docker, MongoDB, FastAPI, and Microservices**.
-      He's currently focused on optimizing on-device LLMs and building Agentic RAG systems.
+      Subrahmanya is skilled in **Python, LangChain, LangGraph, Google ADK, RAG, OpenCV, Gemini, Gemma,
+      Ollama, FastAPI, Microservices, MongoDB, Qdrant, GCP Cloud Run, Docker, and GitHub Actions CI/CD**.
+      He focuses on multi-agent LLM applications, Agentic RAG, and optimising local LLMs for edge devices.
 
   experience:
     keywords: ["experience", "work", "job", "role", "career"]
     response: >
-      Subrahmanya is currently a **Junior Edge AI Engineer at Kruthak** (Jan 2026 - Present) in Bengaluru,
-      where he works on microservices, Agentic RAG, and Edge AI. Previously, he was a Software Engineering
-      Trainee at Kruthak, and interned at Rooman Technologies (IBM Watson AI), Elewyate (ML), and Q-Spiders (MongoDB).
+      Subrahmanya is currently an **Associate AI Engineer at Openecore** (formerly Kruthak Technology, Jun 2026 - Present)
+      in Bengaluru, building an on-premise restaurant ordering platform. Before that he was a Junior Edge AI Engineer
+      (Jan - May 2026) and a Software Engineering Trainee (Jul - Dec 2025) at Kruthak, working on Agentic RAG,
+      microservices, quantised local LLMs, and edge computer vision.
 
   projects:
-    keywords: ["project", "build", "built", "kalpa", "simplyreview", "lexiguid"]
+    keywords: ["project", "build", "built", "kalpa", "simplyreview", "lexiguid", "pallavi", "bakery", "cofro"]
     response: >
-      Key projects include **KALPA** (AI for plantation management, 1L funded),
-      **SimplyReview** (AI literature review tool), **LexiGuid** (Educational AI with RAG),
-      and **Enhanced UX Using Indirect Cues**.
+      Key projects include **Pallavi Bakery Bot** (5-agent Telegram ordering assistant with Google ADK & Gemini),
+      **SimplyReview** (AI literature review assistant with RAG & knowledge graphs), **LexiGuid** (Agentic RAG
+      educational assistant), **COFRO** (coffee ripeness detection on Hailo-8L), and **KALPA** (agricultural AI, ₹1L seed funded).
 
   education:
     keywords: ["education", "degree", "college", "university", "cgpa"]
     response: >
       Subrahmanya holds a **BE in Artificial Intelligence & Machine Learning** from
-      Vivekananda College of Engineering & Technology, Puttur (CGPA: 8.83/10, 2021-2025).
+      Vivekananda College of Engineering & Technology, Puttur (CGPA: 8.83/10, Dec 2021 - Dec 2025).
 
   contact:
     keywords: ["contact", "email", "reach", "hire", "connect"]
     response: >
       You can reach Subrahmanya at **subrahmanyashegde2413@gmail.com** or connect on
-      [LinkedIn](https://linkedin.com/in/subrahmanya-shivaram-hegde-3aab21255).
-      He's open to Edge AI, MLOps, and Agentic Systems roles.
+      [LinkedIn](https://linkedin.com/in/subrahmanya24).
+      He's open to Agentic AI, RAG, and Edge LLM roles.
 
   certifications:
-    keywords: ["certif", "course", "ieee", "core club", "activity"]
+    keywords: ["certif", "course", "achievement", "award", "funding"]
     response: >
-      Subrahmanya has certifications in **AWS Cloud Practitioner Essentials (AWS)**, **Watson AI (IBM)**,
-      **Life Skills 2.0 (Wadhwani Foundation)**, **Python Basics (Coursera)**, and **AI Youth Program (Intel)**.
-      He's also an IEEE member and CoRE Club member at VCET.
+      Subrahmanya holds **Career Essentials in Generative AI (Microsoft & LinkedIn Learning)**,
+      **GitHub Tutorial for Beginners (Great Learning)**, and **Cognitive Customer Insights with Watson AI
+      (IBM & Rooman Technologies)**. He also won **₹1,00,000 seed funding** for KALPA under PROJECT CODE UNNATI.

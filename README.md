@@ -1,10 +1,10 @@
 # Subrahmanya Shivaram Hegde — Portfolio
 
-Personal portfolio website showcasing my work in Edge AI, Agentic RAG, and Computer Vision.
+Personal portfolio website showcasing my work in Agentic AI, RAG, and Edge LLMs.
 
 ## Live Site
 
-[subrahmanya-portfolio.vercel.app](https://subrahmanya-portfolio.vercel.app)
+[subrahmanyaportfoliowebsite.vercel.app](https://subrahmanyaportfoliowebsite.vercel.app)
 
 ## Tech Stack
 
@@ -26,6 +26,6 @@ Personal portfolio website showcasing my work in Edge AI, Agentic RAG, and Compu
 ## Contact
 
 - Email: subrahmanyashegde2413@gmail.com
-- GitHub: [Subrahmanya07](https://github.com/Subrahmanya07)
-- LinkedIn: [Subrahmanya Shivaram Hegde](https://linkedin.com/in/subrahmanya-shivaram-hegde-3aab21255)
+- GitHub: [subrahmanyahegde24](https://github.com/subrahmanyahegde24)
+- LinkedIn: [Subrahmanya Shivaram Hegde](https://linkedin.com/in/subrahmanya24)
 

@@ -31,36 +31,32 @@ _short_greet_words = set(_responses["greeting"]["short_greet_words"])
 
 # Fallback knowledge base when RAG DB is empty or unavailable
 FALLBACK_CONTEXT = """
-Subrahmanya Shivaram Hegde is a Junior Edge AI Engineer at Kruthak, Bengaluru.
-He builds Agentic RAG SaaS on GCP, works with Microservices and Computer Vision.
+Subrahmanya Shivaram Hegde is an AI Engineer (Agentic AI, RAG, Edge LLMs) in Bengaluru with 1+ year of industry experience
+building production RAG systems, multi-agent LLM applications, and edge AI pipelines.
 
 Experience:
-- Junior Edge AI Engineer at Kruthak (Jan 2026 - Present): Microservices, Agentic RAG, Edge AI (Gemma), DevOps on GCP.
-- Software Engineering Trainee at Kruthak (Jul 2025 - Dec 2025): Educational AI, LexiGuid MVP, RAG pipelines, GCP.
-- AI/ML Engineer at Rooman Technologies (Sep 2024 - Feb 2025): Watson AI, customer insights, IBM mentorship.
-- ML Intern at Elewyate (Jun 2024 - Jul 2024): Classification project.
-- MongoDB Intern at Q-Spiders (Oct 2023 - Nov 2023): Full-stack Member Tracking System.
+- Associate AI Engineer at Openecore Private Limited, formerly Kruthak Technology (Jun 2026 - Present): self-hosted on-premise restaurant ordering platform (tablet ordering, real-time Kitchen Display System, admin console), zero cloud dependency, order data structured for a recommendation engine.
+- Junior Edge AI Engineer at Kruthak Technology (Jan 2026 - May 2026): monolith to microservices (~30% faster), Agentic RAG for LexiGuid (LangChain, ChromaDB, Qdrant, OpenCV), quantised Gemma via Ollama (~40% lower latency), GitHub Actions CI/CD to GCP Cloud Run (deploys ~45 min to ~8 min).
+- Software Engineering Trainee at Kruthak Technology (Jul 2025 - Dec 2025): LexiGuid MVP (RAG, Qdrant, Dockerised FastAPI on Cloud Run), COFRO coffee ripeness detection (OpenCV, YOLOX, ~300K image dataset, Hailo-8L edge accelerator).
 
-Education: BE in AI & ML from VCET Puttur (CGPA: 8.83/10, 2021-2025).
-Pre-University from Trisha Pre-University College, Udupi (82.33%, 2019-2021).
+Education: BE in AI & ML from Vivekananda College of Engineering & Technology, Puttur (CGPA: 8.83/10, Dec 2021 - Dec 2025).
 
 Projects:
-- KALPA: AI humanoid for areca/coconut plantations, 25% efficiency improvement, seed funding of 1 lakh under PROJECT CODE UNNATI.
-- SimplyReview: AI literature review tool with semantic search and knowledge graphs.
-- LexiGuid: Educational AI with RAG pipelines for student query resolution.
-- Enhanced UX Using Indirect Cues: Context-aware personalization.
+- Pallavi Bakery Bot: 5-agent Telegram ordering system with Google ADK and Gemini, 23 custom tools, FastAPI, MongoDB, Razorpay, Next.js QR front-end on Vercel.
+- SimplyReview: AI literature review assistant, 50+ papers, knowledge graph of 1,200+ concepts, RAG over 15K+ Qdrant embeddings, ~60% less review time.
+- LexiGuid: Agentic RAG educational assistant.
+- COFRO: coffee ripeness detection at the edge.
+- KALPA: agricultural AI system, awarded 1,00,000 INR seed funding under PROJECT CODE UNNATI.
 
-Skills: Python, C, Java, Machine Learning, Deep Learning, RAG Pipelines, Edge AI, Computer Vision, NLP, LLMs (Gemma, Gemini), FastAPI, Flask, Microservices, MongoDB, MySQL, Vector Databases, GCP, Docker, GitHub Actions, CI/CD, HTML, CSS, JavaScript, Git.
+Skills: Python, C, JavaScript, SQL, Java, LangChain, LangGraph, Google ADK, RAG, TensorFlow, Scikit-Learn, OpenCV, Gemini, Gemma, Qwen, Ollama, Hailo-8L, FastAPI, REST APIs, Pydantic, Microservices, MongoDB, PostgreSQL, MySQL, Qdrant, Git, GitHub, Tailscale, GCP (Cloud Run, Artifact Registry), Docker, GitHub Actions, CI/CD, Vercel.
 
-Certifications: AWS Cloud Practitioner Essentials (Amazon Web Services), Life Skills 2.0 (Wadhwani Foundation), Cognitive Customer Insights with Watson AI (IBM), Python Basics (Coursera), AI Youth Program (Intel).
+Certifications: Career Essentials in Generative AI (Microsoft & LinkedIn Learning), GitHub Tutorial for Beginners (Great Learning), Cognitive Customer Insights with Watson AI (IBM & Rooman Technologies).
 
-Activities: IEEE Member (participated in PRIMED Internship by IEEE Mangalore), CoRE Club member at VCET (organized "Unbounded" technical event).
-
-Achievements: Received seed funding of 1,00,000 INR for project KALPA under PROJECT CODE UNNATI.
+Achievements: Seed funding of 1,00,000 INR for KALPA under PROJECT CODE UNNATI (Seventh Sense, Feb 2024).
 
 Contact: subrahmanyashegde2413@gmail.com
-GitHub: https://github.com/Subrahmanya07
-LinkedIn: https://linkedin.com/in/subrahmanya-shivaram-hegde-3aab21255
+GitHub: https://github.com/subrahmanyahegde24
+LinkedIn: https://linkedin.com/in/subrahmanya24
 Location: Bengaluru, Karnataka, India
 """
 

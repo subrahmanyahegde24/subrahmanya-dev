@@ -12,13 +12,13 @@ const terminalLines = [
   { text: 'whoami', prefix: '$', type: 'prompt', delay: 300 },
   { text: 'Subrahmanya Shivaram Hegde', type: 'output', delay: 200 },
   { text: 'role --current', prefix: '$', type: 'prompt', delay: 300 },
-  { text: 'Junior Edge AI Engineer @ Kruthak', type: 'output', delay: 200 },
+  { text: 'Associate AI Engineer @ Openecore', type: 'output', delay: 200 },
   { text: 'location', prefix: '$', type: 'prompt', delay: 300 },
   { text: 'Bengaluru, Karnataka, India', type: 'output', delay: 200 },
   { text: 'cat passion.txt', prefix: '$', type: 'prompt', delay: 300 },
-  { text: 'Building intelligent systems at the edge — from Agentic RAG to Computer Vision.', type: 'output', delay: 200 },
+  { text: 'Building production RAG systems, multi-agent LLM apps, and edge AI pipelines.', type: 'output', delay: 200 },
   { text: 'echo $STATUS', prefix: '$', type: 'prompt', delay: 300 },
-  { text: '🟢 Open to opportunities in Edge AI, MLOps & Agentic Systems', type: 'success', delay: 100 },
+  { text: '🟢 Open to opportunities in Agentic AI, RAG & Edge LLMs', type: 'success', delay: 100 },
 ];
 
 const socialLinks = [
@@ -33,7 +33,7 @@ export default function About() {
       <div className="section-container pt-28">
         <SectionHeading
           title="About Me"
-          subtitle="Edge AI engineer passionate about building intelligent systems."
+          subtitle="AI engineer building agentic, retrieval-augmented, and edge AI systems."
         />
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
@@ -75,28 +75,28 @@ export default function About() {
             <div className="space-y-4 text-slate-300 light:text-slate-700 leading-relaxed text-justify">
               <p>
                 I'm <strong className="text-white light:text-slate-900">Subrahmanya Shivaram Hegde</strong>,
-                a Junior Edge AI Engineer at <strong className="text-accent-indigo">Kruthak</strong> in
-                Bengaluru. I specialize in building Agentic RAG systems, optimizing on-device LLMs,
-                and architecting microservices on Google Cloud Platform.
+                an Associate AI Engineer at <strong className="text-accent-indigo">Openecore</strong> (formerly
+                Kruthak Technology) in Bengaluru, with 1+ year of industry experience building production
+                RAG systems, multi-agent LLM applications, and edge AI pipelines.
               </p>
               <p>
-                My journey started at Vivekananda College of Engineering & Technology, where I
-                pursued AI & Machine Learning (CGPA: 8.83/10). From building an AI-powered
-                plantation management system (KALPA) that earned ₹1,00,000 in seed funding to
-                engineering dynamic RAG workflows — I'm driven by the vision of making AI
-                accessible, efficient, and impactful.
+                I work across the full delivery lifecycle: designing microservice backends with FastAPI,
+                optimising local LLMs for low-spec devices, and shipping containerised workloads to GCP
+                through CI/CD. Right now I'm building a self-hosted, on-premise restaurant ordering
+                platform — tablet ordering, a real-time Kitchen Display System, and an admin console —
+                designed to feed a recommendation engine.
               </p>
               <p>
-                At Kruthak, I've refactored monolithic backends into scalable microservices,
-                engineered hybrid search systems with Vector DBs, and am currently optimizing
-                local LLMs (Gemma) for offline-first educational tools. Previously, I worked
-                with IBM Watson at Rooman Technologies and contributed to research at IEEE
-                and CoRE Club.
+                Before that, as a Junior Edge AI Engineer at Kruthak, I split a monolith into
+                microservices (~30% faster inter-service responses), engineered Agentic RAG workflows
+                for LexiGuid, quantised Gemma models via Ollama (~40% lower latency), and cut deployment
+                time from ~45 to ~8 minutes with GitHub Actions and Cloud Run. I also built vision
+                pipelines for COFRO, a coffee ripeness detector running on the Hailo-8L edge accelerator.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new AI research papers,
-                contributing to open-source, or organizing technical events. I believe in
-                building technology that empowers and uplifts communities.
+                I hold a B.E. in Artificial Intelligence & Machine Learning from Vivekananda College of
+                Engineering & Technology (CGPA: 8.83/10), and my agricultural AI project KALPA was
+                awarded ₹1,00,000 in seed funding under PROJECT CODE UNNATI.
               </p>
             </div>
 
@@ -119,7 +119,7 @@ export default function About() {
             {/* Resume Download */}
             <a
               href="/resume.pdf"
-              download
+              download="Subrahmanya_Hegde_Resume.pdf"
               className="inline-flex items-center gap-2 btn-primary mt-2"
             >
               <HiArrowDownTray className="w-5 h-5" />

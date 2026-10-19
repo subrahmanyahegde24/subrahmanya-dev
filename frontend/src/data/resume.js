@@ -1,88 +1,64 @@
 export const personalInfo = {
   name: "Subrahmanya Shivaram Hegde",
-  title: "Edge AI Engineer | Software Developer",
+  title: "AI Engineer | Agentic AI · RAG · Edge LLMs",
   summary:
-    "Junior Edge AI Engineer building Agentic RAG SaaS on GCP. Passionate about Microservices, Computer Vision, and deploying intelligent systems at the edge.",
+    "AI Engineer with 1+ year of industry experience building production RAG systems, multi-agent LLM applications, and edge AI pipelines. Experienced across the full delivery lifecycle: designing microservice backends with FastAPI, optimising local LLMs for low-spec devices, and shipping containerised workloads to GCP through CI/CD.",
   location: "Bengaluru, Karnataka, India",
   email: "subrahmanyashegde2413@gmail.com",
-  github: "https://github.com/Subrahmanya07",
-  linkedin: "https://linkedin.com/in/subrahmanya-shivaram-hegde-3aab21255",
+  phone: "+91 7019742330",
+  github: "https://github.com/subrahmanyahegde24",
+  linkedin: "https://linkedin.com/in/subrahmanya24",
   taglines: [
-    "Edge AI Engineer",
-    "RAG Systems Builder",
-    "Computer Vision Specialist",
+    "AI Engineer",
+    "Agentic AI Builder",
+    "RAG Systems Engineer",
+    "Edge LLM Optimiser",
   ],
 };
 
 export const experience = [
   {
     id: 1,
-    company: "Kruthak",
-    role: "Junior Edge AI Engineer",
+    company: "Openecore Private Limited (formerly Kruthak Technology)",
+    role: "Associate AI Engineer",
     type: "full-time",
-    period: "January 2026 – Present",
+    period: "June 2026 – Present",
     location: "Bengaluru, Karnataka, India",
     points: [
-      "Refactored a monolithic backend into scalable microservices (Auth, Vision, Analytics) to improve modularity.",
-      "Engineered dynamic RAG workflows using hybrid search (Vector DBs) to resolve complex student queries accurately.",
-      "Optimizing local LLMs (Gemma) for on-device inference to enable offline-first educational tools.",
-      "Automated container deployments to Google Cloud (GCP) using GitHub Actions CI/CD pipelines.",
+      "Building a self-hosted restaurant ordering platform running entirely on an on-premise server inside the hotel, covering table-side tablet ordering, a real-time Kitchen Display System (KDS), and an admin console for menu, table, and order management.",
+      "Designed the system for fully local-network operation with zero cloud dependency, keeping all operational and customer data on site.",
+      "Structuring collected order data to power a recommendation engine for personalised dish suggestions and menu insights.",
     ],
-    tech: ["Python", "GCP", "Docker", "RAG", "Gemma", "Microservices"],
+    tech: ["Python", "FastAPI", "On-Premise", "Real-time KDS", "Recommendation Systems"],
   },
   {
     id: 2,
-    company: "Kruthak",
+    company: "Kruthak Technology Private Limited",
+    role: "Junior Edge AI Engineer",
+    type: "full-time",
+    period: "January 2026 – May 2026",
+    location: "Bengaluru, Karnataka, India",
+    points: [
+      "Refactored a monolithic backend into microservices (Auth, Vision, Analytics), cutting average inter-service response time by ~30% and enabling independent deployments.",
+      "Engineered Agentic RAG workflows for LexiGuid, an AI educational assistant, using LangChain with hybrid search over ChromaDB and Qdrant, and integrated OpenCV for real-time visual query analysis.",
+      "Optimised local LLMs (Gemma via Ollama) through quantisation, reducing inference latency by ~40% for offline-first use on low-spec devices.",
+      "Automated container builds and deployment to GCP Cloud Run with GitHub Actions CI/CD, reducing deployment time from ~45 min to ~8 min.",
+    ],
+    tech: ["LangChain", "Qdrant", "ChromaDB", "OpenCV", "Gemma", "Ollama", "GCP Cloud Run", "GitHub Actions"],
+  },
+  {
+    id: 3,
+    company: "Kruthak Technology Private Limited",
     role: "Software Engineering Trainee",
     type: "full-time",
     period: "July 2025 – December 2025",
     location: "Bengaluru, Karnataka, India",
     points: [
-      "Selected for an intensive training program focused on Educational AI and Cloud Architecture.",
-      "Developed the initial MVP of the 'LexiGuid' application, conducting foundational research on RAG pipelines.",
-      "Gained proficiency in Google Cloud Platform (GCP) and containerization.",
+      "Built the LexiGuid MVP, designing the foundational RAG pipeline and Qdrant vector search, served through Dockerised FastAPI microservices on GCP Cloud Run.",
+      "Developed a Python + OpenCV video-to-frame pipeline for COFRO (coffee ripeness detection), preserving blur, low-light, and motion artifacts to improve YOLOX generalisation in field conditions.",
+      "Annotated ~30K images across 7 ripeness classes in Roboflow and scaled the dataset to ~300K through augmentation, for a model deployed on the Hailo-8L edge accelerator.",
     ],
-    tech: ["Python", "GCP", "Docker", "RAG", "Flask"],
-  },
-  {
-    id: 3,
-    company: "Rooman Technologies",
-    role: "AI – Machine Learning Engineer",
-    type: "internship",
-    period: "September 2024 – February 2025",
-    location: "Puttur, Karnataka, India",
-    points: [
-      'Completed a 480-hour internship with hands-on experience in AI-based customer insights.',
-      'Successfully completed "Cognitive Customer Insights with Watson AI" under IBM mentorship.',
-      "Gained workplace skills through the 93-hour Life Skills 2.0 program by Wadhwani Foundation.",
-    ],
-    tech: ["Python", "IBM Watson", "Machine Learning", "Data Analysis"],
-  },
-  {
-    id: 4,
-    company: "Elewyate",
-    role: "Machine Learning Intern",
-    type: "internship",
-    period: "June 2024 – July 2024",
-    location: "Remote",
-    points: [
-      "Completed an internship focused on machine learning.",
-      "Developed a classification project using well-known classification techniques.",
-    ],
-    tech: ["Python", "Scikit-learn", "Machine Learning"],
-  },
-  {
-    id: 5,
-    company: "Q-Spiders",
-    role: "MongoDB Intern",
-    type: "internship",
-    period: "October 2023 – November 2023",
-    location: "Puttur, Karnataka, India",
-    points: [
-      'Developed a full-stack "Member Tracking System" using HTML, CSS, JavaScript, and MongoDB.',
-      "Enhanced front-end design and integrated all components into a responsive, scalable application.",
-    ],
-    tech: ["MongoDB", "HTML", "CSS", "JavaScript", "Python Flask"],
+    tech: ["Python", "RAG", "Qdrant", "FastAPI", "Docker", "OpenCV", "YOLOX", "Roboflow", "Hailo-8L"],
   },
 ];
 
@@ -91,7 +67,7 @@ export const education = [
     institution: "Vivekananda College of Engineering & Technology, Puttur",
     degree: "Bachelor of Engineering",
     field: "Artificial Intelligence & Machine Learning",
-    period: "December 2021 – May 2025",
+    period: "December 2021 – December 2025",
     grade: "CGPA: 8.83/10",
     coursework: [
       "Machine Learning",
@@ -99,40 +75,26 @@ export const education = [
       "Software Engineering",
       "Operating Systems",
       "DBMS",
+      "Data Structures",
     ],
-  },
-  {
-    institution: "Trisha Pre-University College, Udupi",
-    degree: "Senior Secondary (Class XII)",
-    field: "Science",
-    period: "June 2019 – June 2021",
-    grade: "Percentage: 82.33%",
   },
 ];
 
 export const certifications = [
-  { name: "AWS Cloud Practitioner Essentials — Amazon Web Services", link: "https://drive.google.com/file/d/1DFNGqaZl7bSu9OkLwtPzzVxIfVCbGEez/view?usp=sharing" },
-  { name: "Life Skills (Jeevan Kaushal) 2.0 — Wadhwani Foundation", link: "https://web.certificate.wfglobal.org/en/certificate?certificateId=67580cbdd10997dbb9d38411" },
-  { name: "Cognitive Customer Insights with Watson AI — IBM", link: "https://drive.google.com/file/d/1xMemDNp_57evm665CxieJdgtsKHRCOKz/view" },
-];
-
-export const activities = [
   {
-    org: "IEEE",
-    role: "Member of IEEE",
-    period: "December 2022 – April 2025",
-    description:
-      "Participated in the PRIMED Internship by IEEE Mangalore, gaining hands-on experience in industry practices.",
+    name: "Career Essentials in Generative AI — Microsoft & LinkedIn Learning (Sep 2026)",
+    link: "https://drive.google.com/file/d/1uXfvnQfv_QJpSAOalH6rgGlh4fKMDRkS/view?usp=sharing",
   },
   {
-    org: "CoRE Club (Centre of Research Excellency)",
-    role: "Member",
-    period: "December 2022 – April 2025",
-    description:
-      'Active member at VCET, promoting student research. Organized "Unbounded" — a week-long technical event.',
+    name: "GitHub Tutorial for Beginners — Great Learning (Sep 2026)",
+    link: "https://drive.google.com/file/d/18gbzYFEe5-c1scwyRonBu0c-DAg2BA5s/view?usp=sharing",
+  },
+  {
+    name: "Cognitive Customer Insights with Watson AI — IBM & Rooman Technologies (May 2025)",
+    link: "https://drive.google.com/file/d/15HgUzUjRYT3kt0-g29uxTNPAp5zg44Z9/view?usp=sharing",
   },
 ];
 
 export const achievements = [
-  "Received seed funding of ₹1,00,000 for project KALPA under PROJECT CODE UNNATI.",
+  "Seed Funding — PROJECT CODE UNNATI (Seventh Sense, Feb 2024): Awarded ₹1,00,000 for KALPA, an agricultural AI system.",
 ];

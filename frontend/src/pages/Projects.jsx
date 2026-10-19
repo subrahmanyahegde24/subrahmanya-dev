@@ -70,6 +70,16 @@ function ProjectDetailPanel({ project, onClose }) {
           >
             <FaGithub /> View on GitHub
           </a>
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline flex items-center gap-2 text-sm"
+            >
+              <HiArrowTopRightOnSquare /> Live Demo
+            </a>
+          )}
         </div>
       </div>
     </motion.div>
