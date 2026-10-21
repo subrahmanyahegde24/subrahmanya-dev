@@ -1,0 +1,119 @@
+[
+  {
+    "text": "Subrahmanya Shivaram Hegde is an AI Engineer (Agentic AI, RAG, Edge LLMs) based in Bengaluru, Karnataka, India, with 1+ year of industry experience building production RAG systems, multi-agent LLM applications, and edge AI pipelines. He is experienced across the full delivery lifecycle: designing microservice backends with FastAPI, optimising local LLMs for low-spec devices, and shipping containerised workloads to GCP through CI/CD. He is currently building an on-premise restaurant ordering platform designed to feed a recommendation system.",
+    "category": "about",
+    "metadata": {
+      "source": "resume",
+      "section": "summary",
+      "title": "Professional Summary"
+    }
+  },
+  {
+    "text": "Associate AI Engineer at Openecore Private Limited (formerly Kruthak Technology), June 2026 - Present, Bengaluru. Building a self-hosted restaurant ordering platform running entirely on an on-premise server inside the hotel, covering table-side tablet ordering, a real-time Kitchen Display System (KDS), and an admin console for menu, table, and order management. Designed the system for fully local-network operation with zero cloud dependency, keeping all operational and customer data on site. Structuring collected order data to power a recommendation engine for personalised dish suggestions and menu insights.",
+    "category": "experience",
+    "metadata": {
+      "source": "resume",
+      "section": "work_exp",
+      "title": "Openecore - Associate AI Engineer"
+    }
+  },
+  {
+    "text": "Junior Edge AI Engineer at Kruthak Technology Private Limited (January 2026 - May 2026, Bengaluru). Refactored a monolithic backend into microservices (Auth, Vision, Analytics), cutting average inter-service response time by ~30% and enabling independent deployments. Engineered Agentic RAG workflows for LexiGuid, an AI educational assistant, using LangChain with hybrid search over ChromaDB and Qdrant, and integrated OpenCV for real-time visual query analysis. Optimised local LLMs (Gemma via Ollama) through quantisation, reducing inference latency by ~40% for offline-first use on low-spec devices. Automated container builds and deployment to GCP Cloud Run with GitHub Actions CI/CD, reducing deployment time from ~45 min to ~8 min.",
+    "category": "experience",
+    "metadata": {
+      "source": "resume",
+      "section": "work_exp",
+      "title": "Kruthak - Junior Edge AI Engineer"
+    }
+  },
+  {
+    "text": "Software Engineering Trainee at Kruthak Technology Private Limited (July 2025 - December 2025, Bengaluru). Built the LexiGuid MVP, designing the foundational RAG pipeline and Qdrant vector search, served through Dockerised FastAPI microservices on GCP Cloud Run. Developed a Python + OpenCV video-to-frame pipeline for COFRO (coffee ripeness detection), preserving blur, low-light, and motion artifacts to improve YOLOX generalisation in field conditions. Annotated ~30K images across 7 ripeness classes in Roboflow and scaled the dataset to ~300K through augmentation, for a model deployed on the Hailo-8L edge accelerator.",
+    "category": "experience",
+    "metadata": {
+      "source": "resume",
+      "section": "work_exp",
+      "title": "Kruthak - Software Engineering Trainee"
+    }
+  },
+  {
+    "text": "Pallavi Bakery Bot - Multi-Agent AI Ordering Assistant (April 2026 - May 2026). Tech: Python, Google ADK, Gemini, FastAPI, MongoDB, Razorpay, Next.js. Architected a 5-agent Telegram ordering system with Google ADK and Gemini, where 1 orchestrator routes requests to 4 specialised agents (Menu, Order, Tracking, Admin) through 23 custom tools. Automated the full order lifecycle (cart, checkout, modify, cancel, reorder, live tracking) via an async FastAPI backend with 4 route modules, MongoDB, and Razorpay payments. Gave staff 7 in-chat admin tools to manage orders and menu, with a Next.js QR ordering front-end deployed on Vercel. GitHub: https://github.com/subrahmanyahegde24/pallavi-bakery-bot. Live: https://pallavi-bakery-bot.vercel.app",
+    "category": "project",
+    "metadata": {
+      "source": "resume",
+      "section": "projects",
+      "title": "Pallavi Bakery Bot Project"
+    }
+  },
+  {
+    "text": "SimplyReview - AI Literature Review Assistant (February 2025 - May 2025). Tech: Python, LangChain, Qdrant, RAG, Knowledge Graphs. Built a literature review tool that processed 50+ academic papers (~2,000 pages), extracting 1,200+ key concepts and mapping 3,500+ relationships into an interactive knowledge graph. Implemented semantic search and a RAG pipeline over 15K+ Qdrant embeddings, answering cross-document queries with sub-second (<1s) retrieval. Reduced manual literature review time by ~60% compared with reading papers individually.",
+    "category": "project",
+    "metadata": {
+      "source": "resume",
+      "section": "projects",
+      "title": "SimplyReview Project"
+    }
+  },
+  {
+    "text": "LexiGuid: AI educational assistant built at Kruthak (July 2025 - May 2026). Started as an MVP with a foundational RAG pipeline and Qdrant vector search on Dockerised FastAPI microservices on GCP Cloud Run, then evolved into Agentic RAG workflows using LangChain hybrid search over ChromaDB and Qdrant, OpenCV for real-time visual query analysis, and quantised Gemma models via Ollama for offline-first use.",
+    "category": "project",
+    "metadata": {
+      "source": "resume",
+      "section": "projects",
+      "title": "LexiGuid Project"
+    }
+  },
+  {
+    "text": "COFRO: coffee ripeness detection (July 2025 - December 2025, at Kruthak). Python + OpenCV video-to-frame pipeline preserving blur, low-light and motion artifacts to improve YOLOX generalisation; ~30K images annotated across 7 ripeness classes in Roboflow and scaled to ~300K via augmentation; model deployed on the Hailo-8L edge accelerator.",
+    "category": "project",
+    "metadata": {
+      "source": "resume",
+      "section": "projects",
+      "title": "COFRO Project"
+    }
+  },
+  {
+    "text": "Education: Bachelor of Engineering in Artificial Intelligence & Machine Learning from Vivekananda College of Engineering & Technology (VCET), Puttur, India (December 2021 - December 2025). CGPA: 8.83/10. Relevant coursework: Machine Learning, Artificial Intelligence, Software Engineering, Operating Systems, Database Management Systems, Data Structures.",
+    "category": "education",
+    "metadata": {
+      "source": "resume",
+      "section": "education",
+      "title": "BE in AI & ML"
+    }
+  },
+  {
+    "text": "Technical Skills. Languages: C, Python, JavaScript, SQL, Java. AI / LLM: LangChain, LangGraph, Google ADK, RAG. ML & Vision: TensorFlow, Scikit-Learn, OpenCV. Edge LLMs: Gemini, Gemma, Qwen, Ollama, Hailo-8L. Backend: FastAPI, REST APIs, Pydantic, Microservices. Databases: MongoDB, PostgreSQL, MySQL, Qdrant. Tools: Git, GitHub, Tailscale. Cloud & DevOps: GCP (Cloud Run, Artifact Registry), Docker, GitHub Actions, CI/CD, Vercel.",
+    "category": "skill",
+    "metadata": {
+      "source": "resume",
+      "section": "skills",
+      "title": "Technical Skills"
+    }
+  },
+  {
+    "text": "Certifications: Career Essentials in Generative AI by Microsoft & LinkedIn Learning (Sep 2026) - Generative AI, Responsible AI, and Microsoft Copilot. GitHub Tutorial for Beginners by Great Learning (Sep 2026) - Git, version control, branching, collaboration workflows. Cognitive Customer Insights with Watson AI by IBM & Rooman Technologies (May 2025) - IBM Watson, NLP, sentiment analysis, customer analytics.",
+    "category": "about",
+    "metadata": {
+      "source": "resume",
+      "section": "certifications",
+      "title": "Certifications"
+    }
+  },
+  {
+    "text": "Achievements: Seed Funding - PROJECT CODE UNNATI (Seventh Sense, February 2024). Awarded INR 1,00,000 in seed funding for KALPA, an agricultural AI system for Areca/Coconut plantations.",
+    "category": "about",
+    "metadata": {
+      "source": "resume",
+      "section": "achievements",
+      "title": "Achievements"
+    }
+  },
+  {
+    "text": "Contact Information: Email: subrahmanyashegde2413@gmail.com. Phone: +91 7019742330. GitHub: https://github.com/subrahmanyahegde24. LinkedIn: https://linkedin.com/in/subrahmanya24. Portfolio: https://subrahmanyaportfoliowebsite.vercel.app. Location: Bengaluru, Karnataka, India. Subrahmanya is open to opportunities in Agentic AI, RAG, and Edge LLM roles.",
+    "category": "about",
+    "metadata": {
+      "source": "resume",
+      "section": "contact",
+      "title": "Contact Information"
+    }
+  }
+]
