@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Accent palette as RGB triplets; swap the whole site with <html data-accent="..."> */
+  :root,
+  [data-accent='silver'] {
+    --a100: 255 255 255; --a200: 241 243 247; --a300: 223 227 234; --a400: 195 200 210; --a500: 167 174 187; --a700: 91 98 112;
+  }
+  [data-accent='champagne'] {
+    --a100: 250 243 230; --a200: 240 226 199; --a300: 228 206 168; --a400: 212 184 140; --a500: 184 152 106; --a700: 122 96 62;
+  }
+  [data-accent='violet'] {
+    --a100: 245 243 255; --a200: 221 214 254; --a300: 196 181 253; --a400: 167 139 250; --a500: 139 92 246; --a700: 91 33 182;
+  }
+  [data-accent='emerald'] {
+    --a100: 236 253 245; --a200: 167 243 208; --a300: 110 231 183; --a400: 52 211 153; --a500: 16 185 129; --a700: 4 120 87;
+  }
+  [data-accent='rose'] {
+    --a100: 255 241 242; --a200: 254 205 211; --a300: 253 164 175; --a400: 251 113 133; --a500: 244 63 94; --a700: 159 18 57;
+  }
+  [data-accent='coral'] {
+    --a100: 255 247 237; --a200: 254 215 170; --a300: 253 186 116; --a400: 251 146 60; --a500: 249 115 22; --a700: 154 52 18;
+  }
+  [data-accent='indigo'] {
+    --a100: 238 242 255; --a200: 199 210 254; --a300: 165 180 252; --a400: 129 140 248; --a500: 99 102 241; --a700: 55 48 163;
+  }
+
+  html {
+    background: #06070b;
+    color-scheme: dark;
+    overflow-x: clip;
+  }
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  body {
+    @apply font-body text-[15px] text-slate-300 antialiased;
+    background:
+      radial-gradient(1200px 700px at 78% -10%, rgba(80, 86, 104, 0.26), transparent 60%),
+      radial-gradient(900px 600px at -10% 40%, rgba(60, 64, 80, 0.2), transparent 60%),
+      linear-gradient(180deg, #080a12 0%, #06070b 40%, #0a0c16 100%);
+    overflow-x: hidden;
+  }
+  ::selection {
+    background: rgb(var(--a400) / 0.35);
+    color: #fff;
+  }
+  @media (hover: hover) and (pointer: fine) {
+    body.has-cursor,
+    body.has-cursor a,
+    body.has-cursor button,
+    body.has-cursor input,
+    body.has-cursor textarea {
+      cursor: none;
+    }
+  }
+}
+
+@layer components {
+  /* Film grain over everything */
+  .grain {
+    pointer-events: none;
+    position: fixed;
+    inset: -50%;
+    z-index: 60;
+    opacity: 0.06;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    animation: grain 1.2s steps(6) infinite;
+  }
+
+  .text-accent {
+    background: linear-gradient(180deg, rgb(var(--a100)) 0%, rgb(var(--a300)) 34%, rgb(var(--a400)) 62%, rgb(var(--a700)) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-silver {
+    background: linear-gradient(180deg, #ffffff 0%, #dfe3ec 45%, #8d94a6 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .label {
+    @apply font-label text-[11px] font-semibold uppercase tracking-[0.32em];
+  }
+
+  .headline {
+    @apply font-display uppercase leading-[0.88] tracking-[0.01em];
+    filter: drop-shadow(0 0 18px rgb(var(--a400) / 0.2));
+  }
+  .glow {
+    filter: drop-shadow(0 0 16px rgb(var(--a400) / 0.3));
+  }
+
+  .btn-accent {
+    @apply label relative inline-flex items-center gap-3 border border-accent-500/60 px-6 py-4 text-accent-300 transition-all duration-500;
+    background: linear-gradient(180deg, rgb(var(--a400) / 0.06), rgb(var(--a400) / 0.01));
+  }
+  .btn-accent:hover {
+    @apply border-accent-300 text-ink;
+    background: linear-gradient(180deg, rgb(var(--a300)), rgb(var(--a500)));
+    box-shadow: 0 0 32px rgb(var(--a400) / 0.35);
+  }
+  .btn-ghost {
+    @apply label inline-flex items-center gap-3 border border-white/15 px-6 py-4 text-slate-200 transition-all duration-500 hover:border-accent-300/70 hover:text-accent-300;
+  }
+
+  .glass {
+    background: linear-gradient(160deg, rgba(28, 31, 46, 0.86), rgba(13, 15, 24, 0.92));
+    border: 1px solid rgb(var(--a400) / 0.16);
+    box-shadow:
+      0 30px 80px -30px rgba(0, 0, 0, 0.8),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(14px);
+  }
+  .glass-accent {
+    border-color: rgb(var(--a400) / 0.55);
+    box-shadow:
+      0 0 0 1px rgb(var(--a400) / 0.08),
+      0 0 40px -6px rgb(var(--a400) / 0.28),
+      0 40px 100px -30px rgba(0, 0, 0, 0.9),
+      inset 0 1px 0 rgb(var(--a200) / 0.08);
+  }
+
+  .tag {
+    @apply font-label border border-accent-500/35 bg-accent-500/[0.04] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.18em] text-accent-300/90;
+  }
+
+  .field {
+    @apply w-full border-b border-white/10 bg-transparent py-3 font-body text-[15px] text-white placeholder:text-slate-600 focus:border-accent-400 focus:outline-none transition-colors;
+  }
+
+  /* Line reveal: inner span slides up from a clipped parent */
+  .reveal-line {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.06em;
+    margin-bottom: -0.06em;
+  }
+  .reveal-line > span {
+    display: block;
+    will-change: transform;
+  }
+}
+
+@keyframes grain {
+  0% { transform: translate(0, 0); }
+  20% { transform: translate(-6%, 4%); }
+  40% { transform: translate(5%, -6%); }
+  60% { transform: translate(-3%, 7%); }
+  80% { transform: translate(7%, 2%); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes haze {
+  0% { transform: translate3d(-4%, 0, 0) scale(1); opacity: 0.55; }
+  50% { transform: translate3d(4%, -3%, 0) scale(1.12); opacity: 0.85; }
+  100% { transform: translate3d(-4%, 0, 0) scale(1); opacity: 0.55; }
+}
+
+@keyframes drip {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
+
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 0.9; }
+  45% { opacity: 0.78; }
+  50% { opacity: 0.95; }
+  55% { opacity: 0.82; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .grain { animation: none; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
