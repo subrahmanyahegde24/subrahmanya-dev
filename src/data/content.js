@@ -5,7 +5,6 @@ export const profile = {
   intro:
     'I turn ambitious AI ideas into production systems — multi-agent LLM apps, retrieval pipelines, and models tuned to run on the edge.',
   email: 'subrahmanyashegde2413@gmail.com',
-  phone: '+91 7019742330',
   location: 'Bengaluru, India',
   github: 'https://github.com/subrahmanyahegde24',
   linkedin: 'https://linkedin.com/in/subrahmanya24',

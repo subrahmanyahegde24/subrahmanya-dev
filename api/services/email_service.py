@@ -1,67 +1,68 @@
 import os
+import html
 import logging
-import smtplib
-import asyncio
-from email.mime.text import MIMEText
-from email.mime.multipart import MIMEMultipart
+import httpx
 
 logger = logging.getLogger(__name__)
 
-
-def _send_email_sync(contact_data: dict) -> bool:
-    """Synchronous email send — runs in a thread executor."""
-    gmail_user = os.getenv("GMAIL_USER")
-    gmail_password = os.getenv("GMAIL_APP_PASSWORD")
-    notify_email = os.getenv("NOTIFY_EMAIL", gmail_user)
-
-    if not gmail_user or not gmail_password:
-        logger.error("GMAIL_USER or GMAIL_APP_PASSWORD not set")
-        return False
-
-    if not notify_email:
-        logger.error("NOTIFY_EMAIL not set and GMAIL_USER is empty")
-        return False
-
-    msg = MIMEMultipart()
-    msg["From"] = gmail_user
-    msg["To"] = notify_email
-    msg["Subject"] = f"Portfolio Contact: {contact_data['subject']} from {contact_data['name']}"
-    msg["Reply-To"] = contact_data["email"]
-
-    body = f"""
-New message from your portfolio website!
-
-Name: {contact_data['name']}
-Email: {contact_data['email']}
-Subject: {contact_data['subject']}
-
-Message:
-{contact_data['message']}
-"""
-
-    msg.attach(MIMEText(body, "plain"))
-
-    try:
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465, timeout=15) as server:
-            server.login(gmail_user, gmail_password)
-            server.send_message(msg)
-        logger.info(f"Email sent successfully to {notify_email}")
-        return True
-    except smtplib.SMTPAuthenticationError as e:
-        logger.error(f"SMTP auth failed — check GMAIL_USER and GMAIL_APP_PASSWORD: {e}")
-        raise
-    except smtplib.SMTPRecipientsRefused as e:
-        logger.error(f"Recipient refused — check NOTIFY_EMAIL ({notify_email}): {e}")
-        raise
-    except smtplib.SMTPException as e:
-        logger.error(f"SMTP error: {e}")
-        raise
-    except Exception as e:
-        logger.error(f"Unexpected email error: {e}")
-        raise
+RESEND_API_URL = "https://api.resend.com/emails"
 
 
 async def send_notification(contact_data: dict) -> bool:
-    """Send email notification in a thread executor to avoid blocking the event loop."""
-    loop = asyncio.get_event_loop()
-    return await loop.run_in_executor(None, _send_email_sync, contact_data)
+    """Send the contact form submission to NOTIFY_EMAIL via Resend."""
+    api_key = os.getenv("RESEND_API_KEY")
+    notify_email = os.getenv("NOTIFY_EMAIL")
+    # onboarding@resend.dev works without a verified domain, but can only deliver
+    # to the email address that owns the Resend account.
+    from_email = os.getenv("RESEND_FROM_EMAIL", "Portfolio <onboarding@resend.dev>")
+
+    if not api_key:
+        raise RuntimeError("RESEND_API_KEY not set")
+    if not notify_email:
+        raise RuntimeError("NOTIFY_EMAIL not set")
+
+    name = contact_data["name"]
+    email = contact_data["email"]
+    subject = contact_data.get("subject", "General")
+    message = contact_data["message"]
+
+    text = f"""New message from your portfolio website!
+
+Name: {name}
+Email: {email}
+Subject: {subject}
+
+Message:
+{message}
+"""
+
+    body_html = f"""
+<h2>New message from your portfolio website</h2>
+<p><strong>Name:</strong> {html.escape(name)}<br>
+<strong>Email:</strong> {html.escape(email)}<br>
+<strong>Subject:</strong> {html.escape(subject)}</p>
+<p style="white-space:pre-wrap">{html.escape(message)}</p>
+"""
+
+    payload = {
+        "from": from_email,
+        "to": [notify_email],
+        "reply_to": email,
+        "subject": f"Portfolio Contact: {subject} from {name}",
+        "text": text,
+        "html": body_html,
+    }
+
+    async with httpx.AsyncClient(timeout=15) as client:
+        response = await client.post(
+            RESEND_API_URL,
+            json=payload,
+            headers={"Authorization": f"Bearer {api_key}"},
+        )
+
+    if response.status_code >= 400:
+        logger.error(f"Resend error {response.status_code}: {response.text}")
+        raise RuntimeError(f"Resend returned {response.status_code}")
+
+    logger.info(f"Email sent successfully to {notify_email}")
+    return True

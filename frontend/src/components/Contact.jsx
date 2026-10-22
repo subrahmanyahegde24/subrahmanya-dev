@@ -2,24 +2,39 @@ import { useState } from 'react';
 import { profile } from '../data/content';
 import { FadeUp, RevealLines, SectionLabel } from './Reveal';
 
-// No backend: the form composes an email in the visitor's mail client.
+// The form posts to /api/contact, which emails the message via Resend.
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle | sending | sent | error
 
   const set = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
-  const submit = (e) => {
+  const submit = async (e) => {
     e.preventDefault();
-    const subject = `Portfolio enquiry from ${form.name}`;
-    const body = `${form.message}\n\n— ${form.name} (${form.email})`;
-    window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    setSent(true);
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...form, subject: 'Portfolio enquiry' }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setStatus('sent');
+      setForm({ name: '', email: '', message: '' });
+    } catch {
+      setStatus('error');
+    }
   };
+
+  const statusText = {
+    idle: '',
+    sending: '> Transmitting...',
+    sent: '> Transmission received. I will get back to you soon.',
+    error: `> Transmission failed. Email me directly at ${profile.email}.`,
+  }[status];
 
   const links = [
     { k: 'Email', v: profile.email, href: `mailto:${profile.email}` },
-    { k: 'Phone', v: profile.phone, href: `tel:${profile.phone.replace(/\s/g, '')}` },
     { k: 'LinkedIn', v: 'in/subrahmanya24', href: profile.linkedin },
     { k: 'GitHub', v: 'subrahmanyahegde24', href: profile.github },
     { k: 'Resume', v: 'Download PDF ↓', href: profile.resume, download: 'Subrahmanya_Hegde_Resume.pdf' },
@@ -99,11 +114,15 @@ export default function Contact() {
               />
             </label>
 
-            <button type="submit" className="btn-accent mt-10 w-full justify-center">
-              Execute Transmission <span aria-hidden>↗</span>
+            <button
+              type="submit"
+              disabled={status === 'sending'}
+              className="btn-accent mt-10 w-full justify-center disabled:cursor-wait disabled:opacity-60"
+            >
+              {status === 'sending' ? 'Transmitting' : 'Execute Transmission'} <span aria-hidden>↗</span>
             </button>
             <p className="mt-4 h-4 text-center font-mono text-[11px] text-slate-500" aria-live="polite">
-              {sent ? '> Transmission handed to your mail client.' : ''}
+              {statusText}
             </p>
           </form>
         </FadeUp>

@@ -1,6 +1,7 @@
+import os
 import logging
 from fastapi import APIRouter, HTTPException
-from pydantic import BaseModel
+from pydantic import BaseModel, EmailStr, Field
 from api.services.mongodb_service import save_contact
 from api.services.email_service import send_notification
 
@@ -9,10 +10,10 @@ router = APIRouter()
 
 
 class ContactRequest(BaseModel):
-    name: str
-    email: str
-    subject: str = "General"
-    message: str
+    name: str = Field(min_length=1, max_length=200)
+    email: EmailStr
+    subject: str = Field(default="General", max_length=200)
+    message: str = Field(min_length=1, max_length=5000)
 
 
 class ContactResponse(BaseModel):
@@ -22,14 +23,19 @@ class ContactResponse(BaseModel):
 
 @router.post("/contact", response_model=ContactResponse)
 async def submit_contact(request: ContactRequest):
-    try:
-        await save_contact(request.model_dump())
+    data = request.model_dump()
 
+    # Saving to MongoDB is optional — only attempted when a URI is configured.
+    if os.getenv("MONGO_URI") or os.getenv("MONGODB_URI"):
         try:
-            await send_notification(request.model_dump())
+            await save_contact(data)
         except Exception as e:
-            logger.error(f"Email notification failed for contact from {request.name}: {e}")
+            logger.error(f"Failed to save contact from {request.name}: {e}")
 
-        return ContactResponse(success=True, message="Message received! I'll get back to you soon.")
+    try:
+        await send_notification(data)
     except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
+        logger.error(f"Email notification failed for contact from {request.name}: {e}")
+        raise HTTPException(status_code=502, detail="Could not send message. Please try again later.")
+
+    return ContactResponse(success=True, message="Message received! I'll get back to you soon.")
