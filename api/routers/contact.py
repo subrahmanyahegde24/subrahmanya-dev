@@ -36,6 +36,6 @@ async def submit_contact(request: ContactRequest):
         await send_notification(data)
     except Exception as e:
         logger.error(f"Email notification failed for contact from {request.name}: {e}")
-        raise HTTPException(status_code=502, detail="Could not send message. Please try again later.")
+        raise HTTPException(status_code=502, detail=f"Could not send message: {e}")
 
     return ContactResponse(success=True, message="Message received! I'll get back to you soon.")

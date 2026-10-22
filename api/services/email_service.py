@@ -62,7 +62,11 @@ Message:
 
     if response.status_code >= 400:
         logger.error(f"Resend error {response.status_code}: {response.text}")
-        raise RuntimeError(f"Resend returned {response.status_code}")
+        try:
+            reason = response.json().get("message", response.text)
+        except ValueError:
+            reason = response.text
+        raise RuntimeError(f"Resend {response.status_code}: {reason}")
 
     logger.info(f"Email sent successfully to {notify_email}")
     return True

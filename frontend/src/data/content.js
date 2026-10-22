@@ -4,7 +4,7 @@ export const profile = {
   role: ['AI Engineer', 'Agentic AI', 'RAG', 'Edge LLMs'],
   intro:
     'I turn ambitious AI ideas into production systems — multi-agent LLM apps, retrieval pipelines, and models tuned to run on the edge.',
-  email: 'subrahmanyashegde2413@gmail.com',
+  email: 'subrahmanyashegde24@gmail.com',
   location: 'Bengaluru, India',
   github: 'https://github.com/subrahmanyahegde24',
   linkedin: 'https://linkedin.com/in/subrahmanya24',

@@ -54,7 +54,7 @@ Certifications: Career Essentials in Generative AI (Microsoft & LinkedIn Learnin
 
 Achievements: Seed funding of 1,00,000 INR for KALPA under PROJECT CODE UNNATI (Seventh Sense, Feb 2024).
 
-Contact: subrahmanyashegde2413@gmail.com
+Contact: subrahmanyashegde24@gmail.com
 GitHub: https://github.com/subrahmanyahegde24
 LinkedIn: https://linkedin.com/in/subrahmanya24
 Location: Bengaluru, Karnataka, India

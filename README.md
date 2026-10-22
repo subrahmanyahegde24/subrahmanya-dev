@@ -71,7 +71,7 @@ Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds `fronten
 
 ## Contact
 
-- Email: subrahmanyashegde2413@gmail.com
+- Email: subrahmanyashegde24@gmail.com
 - GitHub: [subrahmanyahegde24](https://github.com/subrahmanyahegde24)
 - LinkedIn: [Subrahmanya Shivaram Hegde](https://linkedin.com/in/subrahmanya24)
 
